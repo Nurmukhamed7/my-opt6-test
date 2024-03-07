@@ -1,0 +1,23 @@
+section.table
+  .table__container-new-row-button
+    button.new-row-button#new-row-button(type="button")
+      svg.new-row-button__plus
+        use(href="img/icons/sprite.svg#plus")
+      span.new-row-button__text Добавить строку
+  .table__container#table-container
+    table.table__data.data-table.nowrap#data-table
+    table.table__result.result-table.nowrap#result-table
+      tbody.result-table__body
+        tr.result-table__row
+          th.result-table__head-cell Сумма:
+          td.result-table__body-cell 152 212 руб
+        tr.result-table__row
+          th.result-table__head-cell Кол-во:
+          td.result-table__body-cell 24 шт
+        tr.result-table__row
+          th.result-table__head-cell Общий вес:
+          td.result-table__body-cell 2 322 кг
+      tfoot.result-table__footer
+        tr.result-table__row
+          th.result-table__head-cell.result-table__head-cell--footer Общая сумма:
+          td.result-table__body-cell.result-table__body-cell--footer 152 212 руб

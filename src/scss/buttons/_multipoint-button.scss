@@ -1,0 +1,40 @@
+.multipoint-button__multipoint {
+  vertical-align: middle;
+
+  width: 3px;
+  height: 13px;
+
+  fill: var(--grayish-blue);
+}
+
+.multipoint-button {
+  @include default-button;
+
+  width: 10px;
+  margin: -2px 0;
+
+  text-align: left;
+
+  transition: opacity 0.2s ease-in-out;
+
+  &--active {
+    .multipoint-button__multipoint {
+      margin: 1px 0 0;
+      fill: var(--light-navy);
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+

@@ -1,0 +1,35 @@
+// colResizable custom CSS
+.colresizable-dragging {
+  position: relative;
+}
+
+.colresizable-dragging::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 2px;
+  z-index: 10;
+
+  width: 1px;
+  height: 100%;
+
+  background-color: var(--dark-gray);
+}
+
+.colresizable-grip {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  z-index: 5;
+
+  width: 1px;
+  height: 100%;
+
+  cursor: col-resize;
+
+  transition: background-color 0.2s linear;
+
+  &:hover {
+    background-color: var(--dark-gray);
+  }
+}

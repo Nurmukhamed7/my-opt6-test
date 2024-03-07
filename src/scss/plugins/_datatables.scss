@@ -1,0 +1,159 @@
+/* stylelint-disable plugin/selector-bem-pattern */
+
+// DataTables overridden CSS
+// colReorder styles
+.DTCR_pointer {
+  margin-left: -2px;
+  background-color: var(--light-gray) !important;
+}
+
+.DTCR_clonedTable {
+  border: 1px solid var(--light-gray) !important;
+
+  .sorting_asc::before,
+  .sorting_asc::after {
+    display: none !important;
+  }
+
+  * {
+    cursor: grabbing !important;
+  }
+}
+
+// rowReorder styles
+.dt-rowReorder-float-parent {
+  outline: none !important;
+
+  * {
+    cursor: grabbing !important;
+  }
+
+  table {
+    border-bottom: none !important;
+    ;
+  }
+}
+
+.dt-rowReorder-moving {
+  border-radius: 5px !important;
+  background-color: var(--mist) !important;
+  outline: 2px dashed var(--grayish-blue) !important;
+
+  * {
+    opacity: 0;
+  }
+}
+
+// General styles
+#table-container {
+  .dataTable {
+    border-collapse: collapse;
+    border-bottom: none;
+  }
+
+  .dt-button-down-arrow {
+    display: none;
+  }
+
+  .sorting_asc {
+    cursor: grab;
+
+    &::before,
+    &::after {
+      display: none !important;
+    }
+  }
+
+  .buttons-collection {
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    background: transparent;
+
+    font-family: inherit;
+
+    user-select: none;
+  }
+
+  .dt-buttons {
+    float: none;
+    margin: 7px 14px 0 auto;
+    text-align: right;
+  }
+
+  .dtb-b1 {
+    width: max-content;
+    margin: 0;
+    padding: 6px 8px 6px 11px;
+    border-radius: 5px;
+
+    background-color: var(--white);
+    box-shadow: $box-shadow-button;
+  }
+
+  .dt-button-collection:not(.dtb-b1) {
+    width: max-content;
+    margin: 0;
+    padding: 6px 0;
+    border-radius: 5px;
+
+    box-shadow: $box-shadow-button;
+
+    div[role="menu"] {
+      display: flex;
+      flex-direction: column;
+      row-gap: 11px;
+    }
+  }
+
+  .buttons-columnVisibility {
+    display: flex;
+
+    padding: 0 8px;
+
+    color: var(--dark);
+
+    font-size: 14px;
+    font-family: inherit;
+
+    column-gap: 4px;
+
+    &::before {
+      content: '';
+      display: block;
+
+      width: 13px;
+      height: 14px;
+      border: solid 1px var(--grayish-blue);
+      border-radius: 3px;
+    }
+
+    &.dt-button-active::after {
+      content: '';
+      top: 10px;
+      left: 8px;
+
+      width: 13px;
+      height: 14px;
+      border-radius: 3px;
+
+      background-color: var(--dark-blue);
+      background-image: url("../img/general/tick.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .dt-button-collection-title {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    align-items: center;
+
+    margin: 0 8px;
+    padding: 0 0 13px;
+
+    column-gap: 10px;
+  }
+}

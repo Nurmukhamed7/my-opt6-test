@@ -1,0 +1,138 @@
+.data-table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+}
+
+.data-table__head-cell {
+  display: none;
+  overflow: hidden;
+
+  padding: 14px 8px !important;
+  border: 1px solid var(--light-gray) !important;
+
+  font-weight: 600;
+  white-space: nowrap;
+
+  cursor: grab;
+  user-select: none;
+
+  @media (min-width: $tablet-width) {
+    display: table-cell;
+  }
+}
+
+.data-table__body-row {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 0 5px;
+  padding: 14px 4px 10px;
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+
+  background-color: var(--white) !important;
+  box-shadow: $box-shadow;
+
+  @media (min-width: $tablet-width) {
+    display: table-row;
+
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: none;
+
+    background-color: none;
+    box-shadow: none;
+  }
+}
+
+.data-table__body-cell {
+  overflow: hidden;
+
+  padding: 0 10px 15px !important;
+
+  text-overflow: clip;
+  white-space: nowrap;
+
+  &::before {
+    content: attr(data-label);
+    display: block;
+
+    margin: 0 0 5px;
+
+    color: var(--suva-grey);
+
+    font-size: 10px;
+    line-height: 11px;
+
+    @media (min-width: $tablet-width) {
+      display: none;
+      margin: 0;
+    }
+  }
+
+  &--action {
+    position: relative;
+    overflow: unset !important;
+  }
+
+  &--order {
+    display: none;
+
+    @media (min-width: $tablet-width) {
+      display: table-cell;
+    }
+  }
+
+  &--select {
+    overflow: unset !important;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 5px 10px !important;
+  }
+}
+
+.data-table__drag-button {
+  margin: 0 0 0 3px;
+}
+
+.data-table__delete-button {
+  position: absolute;
+  bottom: -18px;
+  left: 10px;
+  z-index: 10;
+}
+
+.data-table__input {
+  width: 100%;
+  max-width: 100%;
+  height: 35px;
+  padding: 8px 0 6px 14px;
+  border: solid 1px var(--chinese-silver);
+  border-radius: 5px;
+
+  font-size: 16px;
+  font-family: inherit;
+  line-height: 16px;
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button {
+    appearance: none;
+  }
+
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  &::placeholder {
+    color: var(--black);
+
+    font-size: 16px;
+    font-family: inherit;
+    line-height: 16px;
+
+    opacity: 0.3;
+  }
+}
